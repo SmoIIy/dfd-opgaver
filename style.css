@@ -5,8 +5,63 @@
     --color-text-button: #FFF;
 
     /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+    --hide-overlay: 1;
 }
 
 
 /* Begynd her... */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .wrapper {
+        padding: 40px;
+        max-width: 500px;
+        h1 {
+            color: var(--color-heading);
+            font-size: 5rem;
+        }
+        p {
+            color: var(--color-body);
+            margin: 15px 0;
+        }
+        button {
+            background-color: var(--color-bg-button);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            color: var(--color-text-button);
+        }
+    }
+
+    .wrapper + .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 25px;
+
+        img {
+            border-radius: 12px;
+        }
+
+        & :first-child {
+            grid-column-start: 2;
+        }
+        & :nth-child(2) {
+            grid-row-start: 2;
+        }
+
+        img:nth-child(3) {
+            grid-column-start: 2;
+            grid-row: span 2;
+        }
+        img:last-child {
+            grid-column-start: 2;
+        }
+        
+    }
+}
+
+
+
