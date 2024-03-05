@@ -1,2 +1,18 @@
 /* Dine styles her */
-article {}
+:root {
+    --flow-space: .5rem;
+}
+h2 {
+    --flow-space: 2rem;
+}
+h3 {
+    --flow-space: 1rem;
+}
+h3 + * {
+    --flow-space: .25rem;
+}
+
+article > * + * {
+    margin-block-start: var(--flow-space, 1rem);
+}
+
