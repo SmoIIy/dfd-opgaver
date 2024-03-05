@@ -1,5 +1,5 @@
 :root {
-    background: #E3EDFB;
+    background: #181818;
 
     --color-icon: #0B3A67;
 
@@ -9,8 +9,42 @@
     --font-heading: 1.75rem;
 
     /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+    --hide-overlay: 1;
 }
 
 
 /* Begynd her... */
+.card {
+    background-color: #E3EDFB;
+    max-width: 400px;
+    max-height: 170px;
+    padding: var(--card-padding);
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+
+
+
+    img {
+        aspect-ratio: 1/1;
+        width: var(--image-width);
+        border-radius: 50%;
+    }
+    :not(:first-child) {
+        grid-column-start: 2;
+        grid-row-start: 1;
+    }
+    .content {
+        padding: var(--card-padding);
+        & > * {
+            margin: 0.1rem;
+        }
+        h2 {
+            font-size: var(--font-heading);
+        }
+        .icons {
+            display: flex;
+            color: var(--color-icon);
+        }
+    }
+}
+
