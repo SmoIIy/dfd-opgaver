@@ -1,8 +1,9 @@
 @import url('https://fonts.cdnfonts.com/css/gill-sans-2');
 @import url('https://fonts.cdnfonts.com/css/abril-fatface');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 article {
-    font-family: 'Gill Sans', sans-serif;
+    font-family: "Lato", sans-serif;
     max-inline-size: 400px;
     background: #fff;
     margin-block: 3rem;
@@ -15,7 +16,7 @@ article {
 
 .picture {
     display: grid;
-    padding: .5rem;
+    padding: 0;
 
     >* {
         grid-area: 1 / 1;
@@ -34,7 +35,7 @@ article {
         letter-spacing: 2px;
         line-height: 1;
         place-self: end;
-        background: #BDC4CE;
+        background: #515458;
         color: #fff;
         margin: 1rem;
     }
@@ -42,6 +43,7 @@ article {
     img {
         border: 1px solid #DADCEB;
         border-radius: .5rem;
+
     }
 }
 
@@ -49,23 +51,29 @@ article {
     display: grid;
     gap: 1rem;
     padding: 0 2rem 1rem;
+    header {
+        margin-top: 1.5rem;
+    }
+
 }
 
 .title {
-    font-family: 'Abril Fatface', sans-serif;
-    font-weight: 400;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 600;
     font-size: 2rem;
-    color: #3C55CC;
+    color: #181818;
+
+
 }
 
 .location {
-    color: #C8C9CB;
-    text-transform: uppercase;
+    color: #353535;
     font-size: .95em;
 }
 
 .description p {
-    text-align: center;
+    text-align: left;
+    line-height: 1.5;
 }
 
 .amenities-details {
@@ -78,8 +86,8 @@ article {
         gap: .75rem;
         place-items: center;
         padding: .25rem;
-        background: #F0F2FF;
-        color: #3C55CC;
+
+        color: #181818;
     }
 }
 
@@ -102,8 +110,8 @@ footer {
         border-radius: 8px;
         font-weight: 500;
         font: inherit;
-        background: #F0F2FF;
-        color: #3C55CC;
+        background: #3C55CC;
+        color: #F0F2FF;
     }
 
     .price {
@@ -145,7 +153,7 @@ footer {
     svg {
         display: block;
         max-inline-size: 100%;
-        height: auto;
+
     }
 
     ul {
