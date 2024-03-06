@@ -9,11 +9,14 @@
     --gray-700: #374151;
     --gray-800: #1f2937;
     --gray-900: #111827;
-    --size-step-0: 1rem;
-    --size-step-1: 1.25rem;
-    --size-step-2: 1.56rem;
-    --size-step-3: 1.95rem;
-    --size-step-4: 2.43rem;
+    --size-step--1: clamp(0.8rem, 0.7848rem + 0.0676vi, 0.844rem);
+    --size-step-0: clamp(1rem, 0.9567rem + 0.1923vi, 1.125rem);
+    --size-step-1: clamp(1.25rem, 1.1636rem + 0.384vi, 1.4996rem);
+    --size-step-2: clamp(1.5625rem, 1.4114rem + 0.6715vi, 1.999rem);
+    --size-step-3: clamp(1.9531rem, 1.7068rem + 1.0947vi, 2.6647rem);
+    --size-step-4: clamp(2.4414rem, 2.057rem + 1.7086vi, 3.552rem);
+    --size-step-5: clamp(3.0518rem, 2.4692rem + 2.5893vi, 4.7348rem);
+    --flow-space: .5rlh;
 }
 
 body {
@@ -21,25 +24,79 @@ body {
     max-width: 1400px;
     font-family: system-ui, sans-serif;
     padding: 2em;
-    background-color: var(--gray-50);
+    background-color: var(--gray-100);
     color: var(--gray-800);
     font-size: var(--size-step-0);
+    line-height: 1.7;
+}
+article {
+    max-width: 65ch;
+    margin-inline: auto;
+}
+article > * {
+    max-width: 65ch;
 }
 
-:is(h1, h2 ,h3 ){
+:is(h1, h2, h3, figcaption){
     font-weight: 800;
+    --flow-space: 1.5em;
+    line-height: 1.1;
+    text-wrap: balance;
+}
+:is(h1, h2 ,h3) + *{
+    --flow-space: 0.5em;
 }
 h1 {
     font-size: var(--size-step-4);
+    color: var(--gray-900);
+    max-width: 20ch;
 }
 h2 {
     font-size: var(--size-step-3);
+    max-width: 28ch;
 }
 h3 {
-font-size: var(--size-step-2);
+    font-size: var(--size-step-2);
+    max-width: 28ch;
+}
+.text-lead {
+    font-size: var(--size-step-1);
+    font-style: italic;
+    max-width: 50ch;
+    text-wrap: balance;
+    
+    & + * {
+        --flow-space: 2em;
+    }
+}
+img + * {
+    margin-top: 1rem
+}
+figcaption {
+    padding-inline-start: 1em;
+    border-inline-start: 0.3em solid;
+    font-style: italic;
+    font-size: var(--size-step-1);
+    max-width: 50ch;
+  }
+
+a {
+    color: currentColor;
+    text-decoration-color: var(--gray-400);
+    text-decoration-thickness: 0.2ex;
+    text-underline-offset: 0.3ex;
+    transition: all 150ms ease;
+}
+a:hover {
+    text-decoration-color: var(--gray-600);
+    text-decoration-thickness: 0.3ex;
+    color: var(--gray-900);
 }
 
 :is(ol, ul) {
     padding-inline-start: 1em;
 }
 
+article > * + * {
+    margin-block-start: var(--flow-space, 1em);
+  }
