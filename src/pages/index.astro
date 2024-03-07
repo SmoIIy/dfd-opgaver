@@ -36,16 +36,27 @@ import { cardContent } from "../data/card-content.js";
 <style>
   html {
     scroll-snap-type: x mandatory;
-  }
+    }
   main {
     padding-block: 4rem; /* Kun af æstetiske årsager */
   }
   section {
+    display: grid;
+    grid-template-columns: 1fr minmax(600px, 1000px) 1fr;
+
+
     margin-inline: auto;
-    max-width: 1200px;
-    & > * {
+
+    & header {
       max-width: 65ch;
+      grid-row: 1;
+      grid-column: 2;
     }
+    ul {
+      grid-row: 2;
+      grid-column: 2;
+    }
+
   }
   
 </style>
