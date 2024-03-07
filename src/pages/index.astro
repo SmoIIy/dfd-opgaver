@@ -34,9 +34,18 @@ import { cardContent } from "../data/card-content.js";
 </html>
 
 <style>
+  html {
+    scroll-snap-type: x mandatory;
+  }
   main {
     padding-block: 4rem; /* Kun af æstetiske årsager */
   }
   section {
+    margin-inline: auto;
+    max-width: 1200px;
+    & > * {
+      max-width: 65ch;
+    }
   }
+  
 </style>
